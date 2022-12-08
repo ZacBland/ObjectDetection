@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# VS code
+*.code-workspace
+.vscode/
+
+#Video
+frames/*
+*.mp4
+src/datasets/*

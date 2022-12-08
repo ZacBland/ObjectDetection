@@ -1,0 +1,9 @@
+opencv-python
+matplotlib
+numpy
+tensorflow
+tensorflow_datasets
+pathlib
+pandas
+Jinja2
+fiftyone
