@@ -168,7 +168,3 @@ def test_train():
     
     session = fo.launch_app(dataset, desktop=True)
     session.wait()
-
-
-if __name__ == '__main__':
-    train()

@@ -134,5 +134,4 @@ dmypy.json
 
 #Video
 frames/*
-*.mp4
 src/datasets/*

@@ -116,12 +116,3 @@ def is_image(filename, verbose=False):
         return True
 
     return False
-
-if __name__ == '__main__':
-    for folder in os.listdir("src\\data"):
-     # check if file is actually an image file
-        for image in os.listdir(os.path.join("src\\data", folder, "data")):
-            filepath = os.path.join("src\\data", folder, "data", image)
-            if is_image(filepath, verbose=False) == False:
-                # if the file is not valid, remove it
-                os.remove(filepath)

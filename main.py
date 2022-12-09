@@ -4,6 +4,9 @@ import os
 from src import *
 
 from tqdm import tqdm
+from yolo import get_frame
+
+import re
 
 if __name__ == '__main__':
     
@@ -18,6 +21,10 @@ if __name__ == '__main__':
     for i in range(1, len(sys.argv)):
         try:
             filename = sys.argv[i]
+            
+            split_name = re.split(r"\\", filename)
+            print(split_name[-1])
+            
             frames = split_video(sys.argv[i])
             print("length: {0}".format(len(frames)))
             print("Split video, now saving frames...")
@@ -26,12 +33,12 @@ if __name__ == '__main__':
             pbar = tqdm(total=len(frames))
             for i in range(len(frames)):
                 frame_num += 1
-                prediction = predict_frame(frames[i])
-                frames[i] = draw_prediction(frames[i], prediction)
+                frames[i] = get_frame(frames[i])
                 pbar.update(1)
             pbar.close()
             
-            filename = "predicted_" + filename
+            
+            filename = "predicted_" + split_name[-1]
             combine_frames(frames, filename)
             
             

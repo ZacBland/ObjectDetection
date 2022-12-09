@@ -45,4 +45,6 @@ def combine_frames(frames, filename):
         video.write(frame)
         
     video.release()
+    
+    print("saved to: " +filename)
         

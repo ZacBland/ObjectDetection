@@ -36,6 +36,7 @@ def load_and_predict():
 
     print(correct/total)
 
+"""
 classes = ["pikachu", "dog", "drone", "person", "cat"]
 model = tf.keras.models.load_model("src\\models\\16.02_07-12-22\\model_16.02_07-12-22.h5")
 def predict_frame(frame):
@@ -49,7 +50,5 @@ def predict_frame(frame):
     prediction = classes[value]
     
     return prediction
-
     
-if __name__ == "__main__":
-    load_and_predict()
+    """
