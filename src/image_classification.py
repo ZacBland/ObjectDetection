@@ -22,6 +22,12 @@ model_dir = "src\\models"
 image_exts = ["jpeg", "jpg", "bmp"]
 
 def train():
+    
+    """
+    Trains convolution neural network based on tensorflow
+    
+    """
+    
     gpus = tf.config.experimental.list_physical_devices("GPU")
     cpus = tf.config.experimental.list_physical_devices("CPU")
 
@@ -139,6 +145,9 @@ def train():
     plt.show()
     
 def clean_dataset():
+    """
+    Cleans dataset to find uncompatable filetypes
+    """
     for image_class in os.listdir(data_dir):
         print(image_class)
         for image in os.listdir(os.path.join(data_dir, image_class)):
@@ -153,18 +162,3 @@ def clean_dataset():
                 print(e)
                 print('Error with image {}'.format(image_path))
                 exit()
-
-
-def test_train():
-    
-    dataset_name = "open-images-v6"
-    dataset = foz.load_zoo_dataset(
-        dataset_name,
-        split="validation",
-        label_types=["detections","classifications"],
-        classes=["Person"],
-        shuffle=True,
-        max_samples=100)
-    
-    session = fo.launch_app(dataset, desktop=True)
-    session.wait()

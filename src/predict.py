@@ -11,6 +11,9 @@ import random
 
 
 def load_and_predict():
+    """
+    Loads model and predicts value
+    """
     model = tf.keras.models.load_model("src\\models\\12.53_07-12-22\\model_12.53_07-12-22.h5")
     correct = 0
     total = 0

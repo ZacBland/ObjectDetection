@@ -28,6 +28,16 @@ def split_video(filepath):
     return frames
 
 def draw_prediction(frame, prediction):
+    """
+    Draws prediction boxes onto video
+
+    Args:
+        frame: frame to be drawn on
+        prediction: prediction box to draw
+
+    Returns:
+        frame: drawn-on frame
+    """
     height, width, layers = frame.shape
     box_width = int(.1 * width)
     box_height = int(.05 * height)
@@ -37,6 +47,13 @@ def draw_prediction(frame, prediction):
     return frame
 
 def combine_frames(frames, filename):
+    """
+    Combines frames and outputs a video to filepath
+
+    Args:
+        frames (list): frames to be combined
+        filepath: filepath to be saved
+    """
     height, width, layers = frames[0].shape
     size = (width, height)
     video = cv2.VideoWriter(filename, cv2.VideoWriter_fourcc(*'mp4v'), 20, size)

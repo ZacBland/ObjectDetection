@@ -7,6 +7,17 @@ import numpy
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='models\\yolov5s.pt', force_reload=True)  # or yolov5n - yolov5x6, custom
 
 def get_frame(frame):
+    
+    """
+    Gets frame prediction from yolo model
+
+    Inputs:
+        image: frame to be predicted
+
+    Returns:
+        image: predicted frame
+    """
+    
     model.classes = [0,15,16]
     results = model(frame)
     results.render()
